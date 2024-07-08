@@ -1,0 +1,15 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.logo-img {
+    height: 40px;
+    width: 133.41px;
+}
