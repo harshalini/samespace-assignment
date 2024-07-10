@@ -7,9 +7,104 @@
 body {
     background-color: var(--black);
     color: var(--white);
+    padding: 0;
+    margin: 0;
 }
 
 .logo-img {
     height: 40px;
     width: 133.41px;
+    margin-left: 0;
+}
+
+.flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-align {
+    justify-content: center;
+    align-items: center;
+}
+
+.app-layout {
+    
+    justify-content: space-around;
+}
+
+.app-songs-div {
+    width: 80vw;
+    justify-content: space-around;
+    /* padding: 0 2rem; */
+}
+.logo-div {
+    /* width: 280px; */
+    margin-left: 0;
+}
+.sidebar-nav {
+    width: 258px;
+    height: 32px;
+    top: 40px;
+}
+
+.sidebar-nav span {
+    font-weight: 700;
+    size: 24px;
+    line-height: 32px;
+}
+
+.search-bar {
+    width: 400px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px 8px 16px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.song-chip {
+    width: 432px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    justify-content: space-between;
+    padding: 16px;
+    margin-bottom: 0;
+}
+
+.chip-cover-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 56px;
+}
+.chip-desc {
+    /* width: 147px; */
+    height: 48px;
+    gap: 16px;
+    align-items: flex-start;
+}
+.song-info {
+    align-items: flex-start;
+}
+
+.song-info p {
+    font-size: 18px;
+}
+
+.chip-artist {
+    font-size: 14px;
+}
+
+.single-song-div {
+    width: 480px;
+}
+
+.single-song-img {
+    width: 480px;
+    height: 510px;
+}
+
+.single-song-audio-player {
+    background-color: var(--black);
 }
