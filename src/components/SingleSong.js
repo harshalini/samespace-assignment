@@ -40,9 +40,9 @@ export const SingleSong = ({ currId }) => {
   };
   return (
     <div className="single-song-div">
-      <div>
+      <div className="single-song-credits flex">
         <h1>{song?.name}</h1>
-        <p>{song?.artist}</p>
+        <span className="single-song-artist">{song?.artist}</span>
       </div>
       <img
         src={`https://cms.samespace.com/assets/${song?.cover}`}
