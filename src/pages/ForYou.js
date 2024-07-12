@@ -6,6 +6,7 @@ export const ForYou = () => {
     const {currSong} = useSongs()
     return (
         <div>
+
             <div className="app-layout flex">
                 <AppLogo/>
                 <div className="app-songs-div flex">
