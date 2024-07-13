@@ -55,13 +55,15 @@ export const SingleSong = ({ currId }) => {
           volume="0.5"
           src={song?.url}
           showSkipControls
+          showJumpControls={false}
           onClickNext={handleClickNext}
           onEnded={handleEnd}
           onError={() => {
             console.log("play error");
           }}
           style={{
-            backgroundColor: "black",
+            background: "none",
+            border: "none",
             color: "white",
           }}
         />

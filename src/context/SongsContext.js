@@ -6,6 +6,7 @@ const SongsProvider = ({ children }) => {
   const [songsList, setSongsList] = useState();
   const [currSong, setCurrSong] = useState();
   const [imgDominantColor, setImgDominantColor] = useState();
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true)
 
   useEffect(() => {
     (async () => {
@@ -21,6 +22,9 @@ const SongsProvider = ({ children }) => {
   const PlayCurrentSong = (id) => {
     setCurrSong(id);
   };
+
+  const ToggleSidebarVisible = (() => setIsSidebarVisible(!isSidebarVisible))
+  
   return (
     <songsContext.Provider
       value={{
@@ -31,6 +35,9 @@ const SongsProvider = ({ children }) => {
         PlayCurrentSong,
         imgDominantColor,
         setImgDominantColor,
+        isSidebarVisible,
+        setIsSidebarVisible,
+        ToggleSidebarVisible
       }}
     >
       {children}

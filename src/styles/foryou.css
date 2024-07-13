@@ -29,7 +29,6 @@ body {
 }
 
 .app-layout {
-    
     justify-content: space-around;
 }
 
@@ -40,7 +39,7 @@ body {
 }
 .logo-div {
     /* width: 280px; */
-    margin-left: 0;
+    margin-left: -1rem;
 }
 .sidebar-nav {
     height: 32px;
@@ -59,7 +58,7 @@ body {
 }
 
 .search-div {
-    width: 400px;
+    max-width: 400px;
     height: 32px;
     border: none;
     border-radius: 8px;
@@ -80,9 +79,14 @@ body {
     flex-basis: 90%;
     border: none;
 }
-
+.sidebar-div {
+    width: 432px;
+    z-index: 10;
+}
+.songs-list-div {
+    flex: 1 1 100%;
+}
 .song-chip {
-    width: 400px;
     height: 41.84px;
     border: none;
     border-radius: 8px;
@@ -121,14 +125,10 @@ body {
 }
 
 .single-song-img {
-    width: 480px;
+    width: 100%;
     height: 480px;
     border-radius: 8px;
     margin-top: 24px;
-}
-
-.single-song-audio-player {
-    background-color: var(--black);
 }
 
 .single-song-credits {
@@ -142,4 +142,14 @@ body {
 .single-song-artist {
     margin-top: -1.5rem;
     opacity: 0.6;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    visibility: hidden;
 }

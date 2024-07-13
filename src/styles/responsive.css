@@ -1,0 +1,75 @@
+@media (max-width: 1200px){
+    .sidebar-div {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .single-song-div {
+        width: 400px;
+    }
+    .sidebar-div {
+        width: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .menu-btn {
+        visibility: visible;
+        z-index: 15;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        border: none;
+    }
+
+    .menu-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+    .sidebar-action {
+        color: var(--white);
+    }
+
+    .single-song-div {
+        position: absolute;
+        width: 450px;
+        top: 40px;
+        left: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    .sidebar-div {
+        position: fixed;
+        overflow-y: auto;
+        right: 0;
+        top: 0;
+        height: 79vh;
+        border-bottom-left-radius: 1rem;
+        padding-top: 40px;
+        padding-left: 10px;
+    }
+
+    .logo-div {
+        margin-top: -1.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .sidebar-nav button{
+        font-size: 20px;
+    }
+
+@media (max-width: 500px) {
+    .single-song-div {
+        width: 90%;
+    }
+}
+@media(max-width: 400px) {
+    .logo-img {
+        width: 100px;
+        height: 30px;
+    }
+}
+
+}
