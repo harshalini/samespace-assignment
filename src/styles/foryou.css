@@ -58,7 +58,7 @@ body {
 }
 
 .search-div {
-    max-width: 400px;
+    width: 400px;
     height: 32px;
     border: none;
     border-radius: 8px;

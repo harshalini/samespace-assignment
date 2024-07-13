@@ -65,7 +65,7 @@ export const SideBar = () => {
       {isSidebarVisible && (
         <div
           className="sidebar-div flex flex-column"
-          style={{ background: isMobileScreen ? imgDominantColor : "none" }}
+          style={{ background: isMobileScreen ? `linear-gradient(108.18deg, ${imgDominantColor} 2.46%, black)` : "none" }}
         >
           <div className="sidebar-nav flex">
             <button
