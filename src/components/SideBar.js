@@ -1,7 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useSongs } from "../context/SongsContext";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 export const SideBar = () => {
   const {
@@ -19,6 +19,15 @@ export const SideBar = () => {
   );
   const inputRef = useRef();
 
+  const topTracksList = songsList?.filter((s) => s.top_track);
+
+  const SearchSongs = useCallback((searchText) => {
+    const searchedSongs = songsList?.filter((s) =>
+      s.name.toUpperCase().includes(searchText.toUpperCase())
+    );
+    setShowSongsList(searchedSongs);
+  },[songsList]);
+
   useEffect(() => {
     SearchSongs(searchText);
     const mediaQuery = window.matchMedia("(max-width: 800px)");
@@ -28,16 +37,7 @@ export const SideBar = () => {
     setIsMobileScreen(mediaQuery.matches);
 
     return () => mediaQuery.removeEventListener("change", screenSizeChange);
-  }, [searchText, songsList]);
-
-  const topTracksList = songsList?.filter((s) => s.top_track);
-
-  const SearchSongs = (searchText) => {
-    const searchedSongs = songsList?.filter((s) =>
-      s.name.toUpperCase().includes(searchText.toUpperCase())
-    );
-    setShowSongsList(searchedSongs);
-  };
+  }, [searchText, songsList, SearchSongs]);
 
   const forYouTabHandler = () => {
     setActiveSongTab("For You");
