@@ -1,0 +1,39 @@
+.rhap_time {
+  display: none;
+}
+div.rhap_container {
+  background: none;
+}
+.single-song-audio-player .rhap_progress-container {
+  margin-left: -15px;
+  width: 480px;
+}
+div.rhap_progress-bar.rhap_progress-bar-show-download {
+  height: 6px;
+}
+
+.single-song-audio-player .rhap_play-pause-button {
+  height: 56px !important;
+  width: 56px;
+}
+.rhap_play-pause-button svg {
+  height: 48px;
+  width: 48px;
+}
+
+.single-song-audio-player .rhap_volume-controls .rhap_volume-bar-area {
+  display: none;
+}
+
+.single-song-audio-player .rhap_repeat-button,
+.single-song-audio-player .rhap_volume-button {
+  height: 48px;
+  width: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.single-song-audio-player .rhap_progress-indicator {
+  display: none;
+}

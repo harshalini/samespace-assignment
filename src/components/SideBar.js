@@ -120,7 +120,7 @@ export const SideBar = () => {
                   />
                   {/* </div> */}
                   <div className="song-info flex flex-column">
-                    <span>{s.name}</span>
+                    <span className="chip-name">{s.name}</span>
                     <span className="chip-artist">{s.artist}</span>
                   </div>
                 </div>

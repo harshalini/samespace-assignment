@@ -3,6 +3,9 @@ import "react-h5-audio-player/lib/styles.css";
 import { useSongs } from "../context/SongsContext";
 import { useExtractColor } from "react-extract-colors";
 import { useEffect, useState } from "react";
+import FastRewindIcon from '@mui/icons-material/FastRewind';
+import FastForwardIcon from '@mui/icons-material/FastForward';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 export const SingleSong = ({ currId }) => {
   const { songsList, setCurrSong, setImgDominantColor } = useSongs();
@@ -41,7 +44,7 @@ export const SingleSong = ({ currId }) => {
   return (
     <div className="single-song-div">
       <div className="single-song-credits flex">
-        <h1>{song?.name}</h1>
+        <span className="single-song-name">{song?.name}</span>
         <span className="single-song-artist">{song?.artist}</span>
       </div>
       <img
@@ -61,10 +64,15 @@ export const SingleSong = ({ currId }) => {
           onError={() => {
             console.log("play error");
           }}
-          style={{
-            background: "none",
-            border: "none",
-            color: "white",
+          // style={{
+          //   background: "none",
+          //   border: "none",
+          //   color: "white",
+          // }}
+          customIcons={{
+            previous: <FastRewindIcon style={{height: "32px", width: "32px"}}/>,
+            next: <FastForwardIcon style={{height: "32px", width: "32px"}}/>,
+            loopOff: <MoreHorizIcon/>
           }}
         />
       </div>

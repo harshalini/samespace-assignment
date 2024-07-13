@@ -10,11 +10,14 @@ body {
     padding: 0;
     margin-top: 40px;
 }
+button {
+    font-family: inherit;
+}
 
 .logo-img {
     height: 40px;
     width: 133.41px;
-    margin-left: 0;
+    /* margin-left: 0; */
 }
 
 .flex {
@@ -29,46 +32,49 @@ body {
 }
 
 .app-layout {
-    justify-content: space-around;
+    margin: 0 2rem;
+    justify-content: space-between;
 }
 
 .app-songs-div {
-    width: 80vw;
+    width: calc(100vw - 280px);
     justify-content: space-around;
     /* padding: 0 2rem; */
 }
 .logo-div {
     /* width: 280px; */
-    margin-left: -1rem;
+    /* margin-left: -1rem; */
+    flex-basis: 10%;
 }
 .sidebar-nav {
     height: 32px;
-    /* top: 40px; */
     gap: 40px;
+    margin-left: 16px;
 }
 
 .sidebar-nav button {
     font-weight: 700;
     font-size: 24px;
-    line-height: 32px;
     background: none;
     outline: none;
     border: none;
     color: var(--white);
+    cursor: pointer;
 }
 
 .search-div {
-    width: 400px;
+    width: 368px;
     height: 32px;
     border: none;
     border-radius: 8px;
     padding: 8px 16px 8px 16px;
     background-color: rgba(255, 255, 255, 0.08);
     color: var(--white);
-    margin: 1rem 0;
+    margin: 2rem 0 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-self: center;
 }
 
 .search-bar {
@@ -79,6 +85,11 @@ body {
     flex-basis: 90%;
     border: none;
 }
+.search-bar::placeholder {
+    font-size: 18px;
+    color: var(--white);
+    opacity: 0.6;
+}
 .sidebar-div {
     width: 432px;
     z-index: 10;
@@ -87,7 +98,7 @@ body {
     flex: 1 1 100%;
 }
 .song-chip {
-    height: 41.84px;
+    height: 48px;
     border: none;
     border-radius: 8px;
     justify-content: space-between;
@@ -110,7 +121,7 @@ body {
     align-items: flex-start;
 }
 
-.song-info p {
+.chip-name {
     font-size: 18px;
 }
 
@@ -122,6 +133,7 @@ body {
 .single-song-div {
     width: 480px;
     height: 692px;
+    margin-top: 61px;
 }
 
 .single-song-img {
@@ -136,14 +148,14 @@ body {
     align-items: flex-start;
     justify-content: center;
 }
-.single-song-credits h1 {
-   
+.single-song-name {
+   font-size: 32px;
+   font-weight: 700;
 }
 .single-song-artist {
-    margin-top: -1.5rem;
     opacity: 0.6;
+    font-size: 16px;
 }
-
 .menu-btn {
     position: fixed;
     top: 40px;
