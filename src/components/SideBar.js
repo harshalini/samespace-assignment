@@ -2,6 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useSongs } from "../context/SongsContext";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { AppLogo } from "./AppLogo";
 
 export const SideBar = () => {
   const {
@@ -62,11 +63,12 @@ export const SideBar = () => {
 
   return (
     <>
-      {isSidebarVisible && (
+     
         <div
-          className="sidebar-div flex flex-column"
+          className={`sidebar-div flex flex-column ${isSidebarVisible ? 'visible' : 'hidden'}`}
           style={{ background: isMobileScreen ? `linear-gradient(108.18deg, ${imgDominantColor} 2.46%, black)` : "none" }}
         >
+          {isMobileScreen && <AppLogo/>}
           <div className="sidebar-nav flex">
             <button
               onClick={forYouTabHandler}
@@ -131,7 +133,6 @@ export const SideBar = () => {
             ))}
           </div>
         </div>
-      )}
     </>
   );
 };
