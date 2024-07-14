@@ -53,7 +53,7 @@ export const SingleSong = ({ currId }) => {
               fontSize: "24px",
               fontWeight: "700",
               color: "white",
-              marginTop: "3rem",
+              marginTop: "50%",
             }}
           >
             Hey, Play Some Music!
