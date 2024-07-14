@@ -6,7 +6,10 @@ const SongsProvider = ({ children }) => {
   const [songsList, setSongsList] = useState();
   const [currSong, setCurrSong] = useState();
   const [imgDominantColor, setImgDominantColor] = useState();
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true)
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [isMobileScreen, setIsMobileScreen] = useState(
+    window.matchMedia("(max-width: 900px)").matches
+  );
 
   useEffect(() => {
     (async () => {
@@ -23,8 +26,8 @@ const SongsProvider = ({ children }) => {
     setCurrSong(id);
   };
 
-  const ToggleSidebarVisible = (() => setIsSidebarVisible(!isSidebarVisible))
-  
+  const ToggleSidebarVisible = () => setIsSidebarVisible(!isSidebarVisible);
+
   return (
     <songsContext.Provider
       value={{
@@ -37,7 +40,9 @@ const SongsProvider = ({ children }) => {
         setImgDominantColor,
         isSidebarVisible,
         setIsSidebarVisible,
-        ToggleSidebarVisible
+        ToggleSidebarVisible,
+        isMobileScreen,
+        setIsMobileScreen,
       }}
     >
       {children}
