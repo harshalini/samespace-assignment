@@ -83,11 +83,13 @@ button {
   border: none;
   outline: none;
   caret-color: var(--white);
+  color: var(--white);
+  opacity: 0.6;
+  font-size: 18px;
 }
 .search-bar::placeholder {
   font-size: 18px;
   color: var(--white);
-  opacity: 0.6;
 }
 .search-actions {
   background: none;
