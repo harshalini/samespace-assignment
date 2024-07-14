@@ -200,5 +200,14 @@
       width: 0;
       display: none;
     }
+
+    .single-song-audio-player .rhap_volume-button {
+        margin-left: 25px;
+    }
+  }
+  @media (max-width: 400px) {
+    .single-song-audio-player .rhap_volume-button {
+        margin-left: 0;
+    }
   }
 }
