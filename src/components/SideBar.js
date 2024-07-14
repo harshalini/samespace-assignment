@@ -88,14 +88,7 @@ export const SideBar = () => {
             Top Tracks
           </button>
         </div>
-        <div
-          className="search-div"
-          style={{
-            background: isMobileScreen
-              ? imgDominantColor
-              : "rgba(255, 255, 255, 0.08)",
-          }}
-        >
+        <div className="search-div">
           <input
             type="text"
             placeholder="Search Song, Artist"

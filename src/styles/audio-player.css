@@ -4,6 +4,7 @@
 div.rhap_container {
   background: none;
   margin-top: 0.5rem;
+  box-shadow: none;
 }
 .single-song-audio-player .rhap_progress-container {
   margin-left: -15px;
@@ -11,7 +12,9 @@ div.rhap_container {
 }
 .single-song-audio-player .rhap_progress-bar {
   height: 6px;
-  background-color: gray;
+}
+.single-song-audio-player div.rhap_download-progress {
+  display: none;
 }
 
 .single-song-audio-player .rhap_progress-filled {

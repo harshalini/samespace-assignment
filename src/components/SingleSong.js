@@ -68,10 +68,12 @@ export const SingleSong = ({ currId }) => {
               volume="0.5"
               src={song?.url}
               autoPlay
+              autoPlayAfterSrcChange
               showSkipControls
               showJumpControls={false}
               onClickPrevious={handleClickPrevious}
               onClickNext={handleClickNext}
+              onEnded={handleClickNext}
               onError={() => {
                 console.log("play error");
               }}
