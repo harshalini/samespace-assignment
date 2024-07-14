@@ -3,12 +3,12 @@ import "react-h5-audio-player/lib/styles.css";
 import { useSongs } from "../context/SongsContext";
 import { useExtractColor } from "react-extract-colors";
 import { useEffect, useState } from "react";
-import FastRewindIcon from '@mui/icons-material/FastRewind';
-import FastForwardIcon from '@mui/icons-material/FastForward';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import FastRewindIcon from "@mui/icons-material/FastRewind";
+import FastForwardIcon from "@mui/icons-material/FastForward";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 export const SingleSong = ({ currId }) => {
-  const { songsList, setCurrSong, setImgDominantColor } = useSongs();
+  const { songsList, currSong, setCurrSong, setImgDominantColor } = useSongs();
   const [currImgUrl, setCurrImgUrl] = useState();
 
   const getSongById = (sid) => {
@@ -16,9 +16,11 @@ export const SingleSong = ({ currId }) => {
   };
 
   const song = getSongById(currId);
+  const currIndex = songsList?.findIndex((song) => song.id === currSong);
 
   useEffect(() => {
     setCurrImgUrl(`https://cms.samespace.com/assets/${song?.cover}`);
+    console.log(currId);
   }, [song?.cover]);
 
   const { lighterColor } = useExtractColor(currImgUrl);
@@ -30,9 +32,13 @@ export const SingleSong = ({ currId }) => {
 
   const handleClickNext = () => {
     console.log("click next");
-    setCurrSong((currSong) =>
-      currSong < songsList.length - 1 ? currSong + 1 : 0
-    );
+    const nextIndex = currIndex < songsList.length - 1 ? currIndex + 1 : 0;
+    setCurrSong(songsList[nextIndex].id);
+  };
+
+  const handleClickPrevious = () => {
+    const prevIndex = currIndex > 0 ? currIndex - 1 : songsList.length - 1;
+    setCurrSong(songsList[prevIndex].id);
   };
 
   const handleEnd = () => {
@@ -41,6 +47,7 @@ export const SingleSong = ({ currId }) => {
       currSong < songsList.length - 1 ? currSong + 1 : 0
     );
   };
+
   return (
     <div className="single-song-div">
       <div className="single-song-credits flex">
@@ -59,20 +66,18 @@ export const SingleSong = ({ currId }) => {
           src={song?.url}
           showSkipControls
           showJumpControls={false}
+          onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
           onEnded={handleEnd}
           onError={() => {
             console.log("play error");
           }}
-          // style={{
-          //   background: "none",
-          //   border: "none",
-          //   color: "white",
-          // }}
           customIcons={{
-            previous: <FastRewindIcon style={{height: "32px", width: "32px"}}/>,
-            next: <FastForwardIcon style={{height: "32px", width: "32px"}}/>,
-            loopOff: <MoreHorizIcon/>
+            previous: (
+              <FastRewindIcon style={{ height: "32px", width: "32px" }} />
+            ),
+            next: <FastForwardIcon style={{ height: "32px", width: "32px" }} />,
+            loopOff: <MoreHorizIcon />,
           }}
         />
       </div>
