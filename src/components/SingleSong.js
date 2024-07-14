@@ -8,7 +8,13 @@ import FastForwardIcon from "@mui/icons-material/FastForward";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 export const SingleSong = ({ currId }) => {
-  const { songsList, currSong, setCurrSong, setImgDominantColor } = useSongs();
+  const {
+    songsList,
+    currSong,
+    setCurrSong,
+    setImgDominantColor,
+    isMobileScreen,
+  } = useSongs();
   const [currImgUrl, setCurrImgUrl] = useState();
 
   const getSongById = (sid) => {
@@ -41,16 +47,18 @@ export const SingleSong = ({ currId }) => {
   return (
     <div className="single-song-div">
       {currSong < 1 ? (
-        <p
-          style={{
-            fontSize: "24px",
-            fontWeight: "700",
-            color: "white",
-            marginTop: "3rem",
-          }}
-        >
-          Hey, Play Some Music!
-        </p>
+        !isMobileScreen ? (
+          <p
+            style={{
+              fontSize: "24px",
+              fontWeight: "700",
+              color: "white",
+              marginTop: "3rem",
+            }}
+          >
+            Hey, Play Some Music!
+          </p>
+        ) : null
       ) : (
         <div>
           <div className="single-song-credits flex">

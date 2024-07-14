@@ -33,7 +33,9 @@ export const ForYou = () => {
         {isLoaded ? (
           <SideBar />
         ) : (
-          <img src={loader} alt="Loading..." className="loading-image" />
+          <div className="loader-class">
+            <img src={loader} alt="Loading..." className="loading-image" />
+          </div>
         )}
         <SingleSong currId={currSong} />
       </div>

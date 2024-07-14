@@ -192,3 +192,8 @@ button {
   border-radius: 50%;
   visibility: hidden;
 }
+.loading-image {
+  display: flex;
+  width: 100px;
+  margin: auto;
+}
