@@ -43,3 +43,10 @@ div.rhap_container {
 .single-song-audio-player .rhap_progress-indicator {
   display: none;
 }
+
+.single-song-audio-player .div.rhap_volume-container {
+  width: 500px !important;
+}
+.single-song-audio-player button.rhap_volume-button {
+  flex: 0 0 48px;
+}

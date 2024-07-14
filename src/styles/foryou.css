@@ -1,167 +1,194 @@
 :root {
-    --black: #000000;
-    --white: #FFFFFF;
-
+  --black: #000000;
+  --white: #ffffff;
 }
 
 body {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 0;
-    margin-top: 40px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0;
+  margin-top: 40px;
 }
 button {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 .logo-img {
-    height: 40px;
-    width: 133.41px;
-    /* margin-left: 0; */
+  height: 40px;
+  width: 133.41px;
+  /* margin-left: 0; */
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 .flex-align {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-layout {
-    margin: 0 2rem;
-    justify-content: space-between;
+  margin: 0 2rem;
+  justify-content: space-between;
 }
 
 .app-songs-div {
-    width: calc(100vw - 280px);
-    justify-content: space-around;
-    /* padding: 0 2rem; */
+  width: calc(100vw - 280px);
+  justify-content: space-around;
+  /* padding: 0 2rem; */
 }
 .logo-div {
-    /* width: 280px; */
-    /* margin-left: -1rem; */
-    flex-basis: 10%;
+  /* width: 280px; */
+  /* margin-left: -1rem; */
+  flex-basis: 10%;
 }
 .sidebar-nav {
-    height: 32px;
-    gap: 40px;
-    margin-left: 16px;
+  height: 32px;
+  gap: 40px;
+  margin-left: 16px;
 }
 
 .sidebar-nav button {
-    font-weight: 700;
-    font-size: 24px;
-    background: none;
-    outline: none;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
+  font-weight: 700;
+  font-size: 24px;
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
 }
 
 .search-div {
-    width: 368px;
-    height: 32px;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px 8px 16px;
-    background-color: rgba(255, 255, 255, 0.08);
-    color: var(--white);
-    margin: 2rem 0 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: center;
+  width: 368px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px 8px 16px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
 }
 
 .search-bar {
-    /* width: 90%; */
-    height: 100%;
-    /* padding: 8px 16px 8px 16px; */
-    background: none;
-    flex-basis: 90%;
-    border: none;
+  height: 100%;
+  background: none;
+  flex-basis: 90%;
+  border: none;
+  outline: none;
+  caret-color: var(--white);
 }
 .search-bar::placeholder {
-    font-size: 18px;
-    color: var(--white);
-    opacity: 0.6;
+  font-size: 18px;
+  color: var(--white);
+  opacity: 0.6;
+}
+.search-actions {
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--white);
+  opacity: 0.6;
+  cursor: pointer;
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .sidebar-div {
-    width: 432px;
-    z-index: 10;
+  width: 432px;
 }
 .songs-list-div {
-    flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 .song-chip {
-    height: 48px;
-    border: none;
-    border-radius: 8px;
-    justify-content: space-between;
-    padding: 16px;
-    margin-bottom: 0;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 0;
+}
+.song-chip:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
 }
 
 .chip-cover-img {
-    height: 48px;
-    width: 48px;
-    border-radius: 56px;
+  height: 48px;
+  width: 48px;
+  border-radius: 56px;
 }
 .chip-desc {
-    /* width: 147px; */
-    height: 48px;
-    gap: 16px;
-    align-items: flex-start;
+  height: 48px;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.chip-duration {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
 }
 .song-info {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .chip-name {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .chip-artist {
-    font-size: 14px;
-    opacity: 0.6;
+  font-size: 14px;
+  opacity: 0.6;
 }
 
 .single-song-div {
-    width: 480px;
-    height: 692px;
-    margin-top: 61px;
+  width: 480px;
+  height: 692px;
+  margin-top: 61px;
 }
 
 .single-song-img {
-    width: 100%;
-    height: 480px;
-    border-radius: 8px;
-    margin-top: 24px;
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  margin-top: 24px;
+  animation: bounceIn 2s;
 }
 
 .single-song-credits {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .single-song-name {
-   font-size: 32px;
-   font-weight: 700;
+  font-size: 32px;
+  font-weight: 700;
 }
 .single-song-artist {
-    opacity: 0.6;
-    font-size: 16px;
+  opacity: 0.6;
+  font-size: 16px;
 }
 .menu-btn {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    visibility: hidden;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  visibility: hidden;
 }

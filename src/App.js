@@ -6,10 +6,12 @@ function App() {
   const { imgDominantColor } = useSongs();
 
   useEffect(() => {
-    if (imgDominantColor) {
-      document.body.style.background = `linear-gradient(108.18deg, ${imgDominantColor} 2.46%, black)`;
-    }
-  }, [imgDominantColor]);
+    // if (imgDominantColor) {
+    document.body.style.background = `linear-gradient(108.18deg, ${imgDominantColor} 2.46%, black)`;
+    document.body.style.backgroundSize = "cover";
+    //   }
+    // }, [imgDominantColor]
+  });
 
   return (
     <div className="App">

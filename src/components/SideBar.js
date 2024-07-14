@@ -74,7 +74,6 @@ export const SideBar = () => {
             : "none",
         }}
       >
-        {/* {isMobileScreen && <AppLogo/>} */}
         <div className="sidebar-nav flex">
           <button
             onClick={forYouTabHandler}
@@ -89,7 +88,14 @@ export const SideBar = () => {
             Top Tracks
           </button>
         </div>
-        <div className="search-div">
+        <div
+          className="search-div"
+          style={{
+            background: isMobileScreen
+              ? imgDominantColor
+              : "rgba(255, 255, 255, 0.08)",
+          }}
+        >
           <input
             type="text"
             placeholder="Search Song, Artist"
@@ -98,11 +104,17 @@ export const SideBar = () => {
             ref={inputRef}
           />
           {searchText === "" ? (
-            <button onClick={searchButtonClickHandler}>
+            <button
+              onClick={searchButtonClickHandler}
+              className="search-actions"
+            >
               <SearchIcon />
             </button>
           ) : (
-            <button onClick={clearButtonClickHandler}>
+            <button
+              onClick={clearButtonClickHandler}
+              className="search-actions"
+            >
               <ClearIcon />
             </button>
           )}
@@ -120,20 +132,18 @@ export const SideBar = () => {
               }}
             >
               <div className="chip-desc flex">
-                {/* <div className="song-chip-cover"> */}
                 <img
                   src={`https://cms.samespace.com/assets/${s.cover}`}
                   alt="song-cover"
                   className="chip-cover-img"
                 />
-                {/* </div> */}
                 <div className="song-info flex flex-column">
                   <span className="chip-name">{s.name}</span>
                   <span className="chip-artist">{s.artist}</span>
                 </div>
               </div>
               <div>
-                <p>{s.duration}</p>
+                <p className="chip-duration">{s.duration}</p>
               </div>
             </div>
           ))}

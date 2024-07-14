@@ -40,36 +40,54 @@ export const SingleSong = ({ currId }) => {
   };
   return (
     <div className="single-song-div">
-      <div className="single-song-credits flex">
-        <span className="single-song-name">{song?.name}</span>
-        <span className="single-song-artist">{song?.artist}</span>
-      </div>
-      <img
-        src={`https://cms.samespace.com/assets/${song?.cover}`}
-        alt="song cover"
-        className="single-song-img"
-      />
-      <div>
-        <AudioPlayer
-          className="single-song-audio-player"
-          volume="0.5"
-          src={song?.url}
-          showSkipControls
-          showJumpControls={false}
-          onClickPrevious={handleClickPrevious}
-          onClickNext={handleClickNext}
-          onError={() => {
-            console.log("play error");
+      {currSong < 1 ? (
+        <p
+          style={{
+            fontSize: "24px",
+            fontWeight: "700",
+            color: "white",
+            marginTop: "3rem",
           }}
-          customIcons={{
-            previous: (
-              <FastRewindIcon style={{ height: "32px", width: "32px" }} />
-            ),
-            next: <FastForwardIcon style={{ height: "32px", width: "32px" }} />,
-            loopOff: <MoreHorizIcon />,
-          }}
-        />
-      </div>
+        >
+          Hey, Play Some Music!
+        </p>
+      ) : (
+        <div>
+          <div className="single-song-credits flex">
+            <span className="single-song-name">{song?.name}</span>
+            <span className="single-song-artist">{song?.artist}</span>
+          </div>
+          <img
+            src={`https://cms.samespace.com/assets/${song?.cover}`}
+            alt="song cover"
+            className="single-song-img"
+          />
+          <div>
+            <AudioPlayer
+              className="single-song-audio-player"
+              volume="0.5"
+              src={song?.url}
+              autoPlay
+              showSkipControls
+              showJumpControls={false}
+              onClickPrevious={handleClickPrevious}
+              onClickNext={handleClickNext}
+              onError={() => {
+                console.log("play error");
+              }}
+              customIcons={{
+                previous: (
+                  <FastRewindIcon style={{ height: "32px", width: "32px" }} />
+                ),
+                next: (
+                  <FastForwardIcon style={{ height: "32px", width: "32px" }} />
+                ),
+                loopOff: <MoreHorizIcon />,
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
