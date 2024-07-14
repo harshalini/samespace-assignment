@@ -20,7 +20,6 @@ export const SingleSong = ({ currId }) => {
 
   useEffect(() => {
     setCurrImgUrl(`https://cms.samespace.com/assets/${song?.cover}`);
-    console.log(currId);
   }, [song?.cover]);
 
   const { lighterColor } = useExtractColor(currImgUrl);
@@ -31,7 +30,6 @@ export const SingleSong = ({ currId }) => {
   }, [song?.cover, lighterColor, setImgDominantColor]);
 
   const handleClickNext = () => {
-    console.log("click next");
     const nextIndex = currIndex < songsList.length - 1 ? currIndex + 1 : 0;
     setCurrSong(songsList[nextIndex].id);
   };
@@ -40,14 +38,6 @@ export const SingleSong = ({ currId }) => {
     const prevIndex = currIndex > 0 ? currIndex - 1 : songsList.length - 1;
     setCurrSong(songsList[prevIndex].id);
   };
-
-  const handleEnd = () => {
-    console.log("end");
-    setCurrSong((currSong) =>
-      currSong < songsList.length - 1 ? currSong + 1 : 0
-    );
-  };
-
   return (
     <div className="single-song-div">
       <div className="single-song-credits flex">
@@ -68,7 +58,6 @@ export const SingleSong = ({ currId }) => {
           showJumpControls={false}
           onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
-          onEnded={handleEnd}
           onError={() => {
             console.log("play error");
           }}
